@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Giriş Sayfası</title>
+    <!-- Netflix favicon -->
+    <link rel="icon" href="http://pngimg.com/uploads/netflix/small/netflix_PNG15.png" />
+    <style>
+        /* Sayfa içindeki tüm öğeler için varsayılan stil sıfırlama */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: #000;
+        }
+
+        /* Arkaplan resminin üstüne hafif bir opaklık ekleyen öğe */
+        body::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            opacity: 0.5;
+            width: 100%;
+            height: 100%;
+            background: url("https://assets.nflxext.com/ffe/siteui/vlv3/9c5457b8-9ab0-4a04-9fc1-e608d5670f1a/710d74e0-7158-408e-8d9b-23c219dee5df/IN-en-20210719-popsignuptwoweeks-perspective_alpha_website_small.jpg ");
+        }
+
+        /* Sabit bir konumda bulunan gezinme çubuğu */
+        nav {
+            position: fixed;
+            padding: 25px 60px;
+            z-index: 1;
+        }
+
+        /* Gezinme çubuğundaki logo */
+        nav a img {
+            width: 167px;
+        }
+
+        /* Giriş formunu saran konteyner */
+        .form-wrapper {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            border-radius: 4px;
+            padding: 70px;
+            width: 450px;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, .75);
+        }
+
+        /* Giriş formu başlığı */
+        .form-wrapper h2 {
+            color: #fff;
+            font-size: 2rem;
+        }
+
+        .form-wrapper form {
+            margin: 25px 0 65px;
+        }
+
+        /* Form kontrol öğeleri için stil */
+        form .form-control {
+            height: 50px;
+            position: relative;
+            margin-bottom: 16px;
+        }
+
+        form .form-control input {
+            height: 100%;
+            width: 100%;
+            background: #333;
+            border: none;
+            outline: none;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 1rem;
+            padding: 0 20px;
+        }
+
+        form .form-control input:is(:focus, :valid) {
+            background: #444;
+            padding: 16px 20px 0;
+        }
+
+        form .form-control label {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1rem;
+            pointer-events: none;
+            color: #8c8c8c;
+        }
+
+        form .form-control input:is(:focus, :valid)~label {
+            font-size: 0.75rem;
+            transform: translateY(-130%);
+        }
+
+        /* Giriş düğmesi stil */
+        form button {
+            width: 100%;
+            padding: 16px 0;
+            font-size: 1rem;
+            background: #e50914;
+            color: #fff;
+            font-weight: 500;
+            border-radius: 4px;
+            border: none;
+            outline: none;
+            margin: 25px 0 10px;
+            cursor: pointer;
+            transition: 0.1s ease;
+        }
+
+        form button:hover {
+            background: #c40812;
+        }
+
+        /* Bağlantı stil */
+        .form-wrapper a {
+            text-decoration: none;
+        }
+
+        .form-wrapper a:hover {
+            text-decoration: underline;
+        }
+
+        /* Etiketler, paragraflar, küçük yazılar ve bağlantılar için genel stil */
+        .form-wrapper :where(label, p, small, a) {
+            color: #b3b3b3;
+        }
+
+        /* Yardım ve unutma beni bölümleri için stil */
+        form .form-help {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        form .remember-me {
+            display: flex;
+        }
+
+        form .remember-me input {
+            margin-right: 5px;
+            accent-color: #b3b3b3;
+        }
+
+        form .form-help :where(label, a) {
+            font-size: 0.9rem;
+        }
+
+        /* "Yeni misiniz?" bağlantısı */
+        .form-wrapper p a {
+            color: #fff;
+        }
+
+        /* Küçük yazı */
+        .form-wrapper small {
+            display: block;
+            margin-top: 15px;
+            color: #b3b3b3;
+        }
+
+        /* Küçük yazıdaki bağlantı */
+        .form-wrapper small a {
+            color: #0071eb;
+        }
+
+        /* Ekran küçüldükçe bazı stilleri değiştirme */
+        @media (max-width: 740px) {
+            /* Arkaplan resmini gizle */
+            body::before {
+                display: none;
+            }
+
+            /* Gezinme çubuğu ve giriş formu için padding değerlerini düşür */
+            nav,
+            .form-wrapper {
+                padding: 20px;
+            }
+
+            /* Gezinme çubuğundaki logo boyutunu küçült */
+            nav a img {
+                width: 140px;
+            }
+
+            /* Giriş formunu tam genişlikte hizala ve yukarıda biraz daha düşür */
+            .form-wrapper {
+                width: 100%;
+                top: 43%;
+            }
+
+            /* Giriş formu içindeki boşluğu düşür */
+            .form-wrapper form {
+                margin: 25px 0 40px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Netflix logosunu içeren gezinme çubuğu -->
+    <nav>
+        <a href=""><img src=" https://www.freepnglogos.com/uploads/netflix-logo-0.png" alt="logo"></a>
+    </nav>
+    <!-- Giriş formunu içeren konteyner -->
+    <div class="form-wrapper">
+        <h2>Giriş Yap</h2>
+        <!-- Giriş formu -->
+        <form action="">
+            <!-- E-posta girişi -->
+            <div class="form-control">
+                <input type="text" required>
+                <label for="Email">E-posta veya telefon numarası</label>
+            </div>
+            <!-- Şifre girişi -->
+            <div class="form-control">
+                <input type="password" required>
+                <label for="password">Şifre</label>
+            </div>
+            <!-- Giriş düğmesi -->
+            <button type="submit">Giriş Yap</button>
+            <!-- Unutma beni seçeneği ve "Yardım lazım mı?" bağlantısı -->
+            <div class="form-help">
+                <div class="remember-me">
+                    <input type="checkbox" id="remember-me">
+                    <label for="remember-me">Beni Hatırla</label>
+                </div>
+                <a href="">Yardım lazım mı?</a>
+            </div>
+        </form>
+        <!-- "Yeni misiniz?" bağlantısı -->
+        <p>Netflix'e yeni misiniz? <a href="">Şimdi kaydolun</a></p>
+        <!-- Google reCAPTCHA koruma uyarısı -->
+        <small>Bu sayfa, bir bot olmadığınızı sağlamak için Google reCAPTCHA tarafından korunmaktadır. <a href="">Daha fazla bilgi edinin.</a>
+        </small>
+    </div>
+</body>
+
+</html>
