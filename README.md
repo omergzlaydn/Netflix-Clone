@@ -6,7 +6,7 @@ Bu proje, Netflix'in giriş sayfasının basit bir HTML, CSS ve JavaScript kulla
 
 ## Önizleme
 
-![Netflix Giriş Sayfası](netflix.gif)
+![](https://github.com/omergzlaydn/Netflix-Clone/blob/main/img/netflix.gif)
 
 ## Nasıl Kullanılır?
 
@@ -28,11 +28,8 @@ Bu proje, Netflix'in giriş sayfasının basit bir HTML, CSS ve JavaScript kulla
 
 Eğer bu projeye katkıda bulunmak istiyorsanız:
 
-1. Fork yapın (https://github.com/kullanici_adi/netflix-giris-sayfasi/fork)
+1. Fork yapın (https://github.com/omergzlaydn/Netflix-Clone/fork)
 2. Yeni bir özellik için bir dal (branch) oluşturun (`git checkout -b feature/yeni-ozellik`)
 3. Değişikliklerinizi kaydedin (`git commit -am 'Yeni özellik: Açıklama'`)
 4. Dalınıza itme yapın (`git push origin feature/yeni-ozellik`)
 5. Pull Request oluşturun
-
-
-![](link)
